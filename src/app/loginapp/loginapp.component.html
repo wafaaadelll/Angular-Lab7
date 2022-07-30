@@ -1,0 +1,18 @@
+<div class="container w-25 mt-5 pt-5 alert alert-warning">
+    <form #forms="ngForm" (ngSubmit)="login()">
+        <div class="mb-3">
+            <label for="exampleInputUsername1" class="form-label">UserName</label>
+            <input type="email" class="form-control" id="exampleInputUsername1" aria-describedby="emailHelp"
+                name="username" [(ngModel)]="user.Username" #usernames="ngModel" required minlength="3">
+            <div id="emailHelp" class="form-text" [hidden]="usernames.valid || usernames.pristine">ERROR</div>
+            <div id="emailHelp" class="form-text" *ngIf="usernames.errors?.['minlength']">MinLength is 3</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="userpasswords"
+                [(ngModel)]="user.Password">
+        </div>
+        <button type="button" class="btn btn-dark" (click)="login()" disabled={{forms.invalid}}>Submit</button>
+    </form>
+    {{forms.value|json}}
+</div>
