@@ -1,0 +1,26 @@
+<div class="container w-50 mt-5 pt-5 alert alert-dark">
+    <form [formGroup]="forms">
+        <div class="mb-3">
+            <label for="" class="form-label">Title</label>
+            <input type="text" type="email" class="form-control" id="exampleInputUsername1" formControlName="title">
+            <div class="form-text" [hidden]="title.valid || title.pristine">error</div>
+            <div class="form-text" *ngIf="title.errors?.['minlength']">minlength is
+                {{title.errors?.['minlength']['requiredLength']}}
+                {{title.errors?.['minlength']['']}}</div>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Description</label>
+            <input class="form-control" type="text" formControlName="description">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Image URL</label>
+            <input type="text" class="form-control" formControlName="image">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Price</label>
+            <input class="form-control" type="text" formControlName="price">
+        </div>
+        <input type="button" value="save" class="btn btn-danger" (click)="adduser(forms.value)"
+            [disabled]="forms.invalid">
+    </form>
+</div>

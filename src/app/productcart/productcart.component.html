@@ -1,0 +1,23 @@
+<!-- <div>
+    <h2 class="mt-5">productcart works!</h2>
+    <table class="mx-auto tab">
+        <thead>
+            <tr>
+                <th style="width: 150px">ID</th>
+                <th style="width: 400px;">TITLE</th>
+                <th style="width: 150px;">PRICE</th>
+                <th style="width: 250px;">DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of myCartItems">
+                <td>{{p.id}}</td>
+                <td>{{p.title}}</td>
+                <td>{{p.price}}</td>
+                <td><button class="btn btn-danger" (click)="removeItem(p)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<app-productcard [productData]="productdtldata"></app-productcard>

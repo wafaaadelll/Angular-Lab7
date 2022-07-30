@@ -1,0 +1,17 @@
+<div class="card mx-auto" style="width: 20rem;">
+    <div class="contain">
+        <img src={{product!.image}} class="card-img-top image" alt="productImage">
+        <!-- <div class="overlay">
+            <p>Product Rate : <span class="text-primary">{{product!.rating!.rate}}</span></p>
+            <p>Product Count : <span class="text-primary">{{product?.rating?.count}}</span></p>
+        </div> -->
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" appHeighlight><strong>TITLE : </strong>{{product?.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><strong>DESCRIPTION : </strong>{{product?.description}}</h6>
+        <p class="card-text"><strong>PRICE : </strong>{{product?.price | currency:'EUR'}}</p>
+        <a class="d-block mb-2" [routerLink]="['/dtl',product?.id]">Show Details</a>
+        <!-- <button class="btn btn-primary me-3" (click)="setproductdata(product)">Add to cart</button>
+        <button class="btn btn-primary" (click)="productselected(product)">Add to favorite</button> -->
+    </div>
+</div>
